@@ -63,7 +63,7 @@ function Index() {
               <div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" />
               <figure className="portrait-card hero-photo-card">
                 <div className="portrait-top"><span>رعاية متخصصة بصحة المرأة</span><Sparkles size={17} /></div>
-                <div className="portrait-photo-wrap"><img className="portrait-photo" src="./clinic-surgery.jpg?v=5" alt="صورة من غرفة العمليات" fetchPriority="high" decoding="async" /><span className="portrait-photo-caption">عناية طبية باهتمام وثقة</span></div>
+                <div className="portrait-photo-wrap"><img className="portrait-photo" src="/dr-ethar-clinic/clinic-surgery.jpg?v=6" alt="صورة من غرفة العمليات" fetchPriority="high" decoding="async" /><span className="portrait-photo-caption">عناية طبية باهتمام وثقة</span></div>
                 <figcaption className="portrait-caption"><span>اختصاص النسائية والتوليد والعقم</span><strong>د. إيثار خضر الخفاجي</strong><small>بورد عربي في جراحة أمراض النسائية والتوليد والعقم</small></figcaption>
                 <div className="portrait-seal"><Award size={18} /><span>بورد عربي</span></div>
               </figure>
