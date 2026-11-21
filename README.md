@@ -1,128 +1,41 @@
-# عيادة الدكتورة إيثار خضر الخفاجي — موقع تعريفي
+# عيادة الدكتورة إيثار خضر الخفاجي
 
-موقع تعريفي بسيط باللغة العربية (من اليمين إلى اليسار) لعيادة الدكتورة إيثار خضر الخفاجي،
-اختصاص النسائية والتوليد في النجف / الحيدرية.
+موقع تعريفي عربي متجاوب لعيادة الدكتورة إيثار خضر الخفاجي، مستضاف من خلال GitHub Pages.
 
-يعرض الموقع:
+## محتوى الموقع
+- نبذة عن الطبيبة ومؤهلاتها.
+- الخدمات الطبية المقدمة في العيادة.
+- رقم الاتصال ورابط واتساب.
+- روابط فيسبوك وإنستغرام.
+- عنوان العيادة ورابط خرائط Google.
 
-- اسم الدكتورة والاختصاص
-- نبذة تعريفية مختصرة
-- مجالات الرعاية
-- عنوان العيادة مع رابط البحث في خرائط Google
-- معلومات التواصل وأوقات الدوام (تظهر فقط عند إضافتها)
+## تشغيل المشروع محلياً
+يتطلب Node.js.
 
-الموقع تعريفي فقط — لا يحتوي على نظام حجز أو نماذج تواصل.
-
-## التقنيات المستخدمة
-
-- [TanStack Start](https://tanstack.com/start) (React 19 + TypeScript)
-- [Vite](https://vite.dev)
-- [Tailwind CSS v4](https://tailwindcss.com)
-
-## تعديل محتوى العيادة
-
-كل معلومات العيادة (الاسم، العنوان، الهاتف، أوقات الدوام، روابط التواصل، مجالات الرعاية)
-موجودة في ملف واحد فقط:
-
-```
-src/config/clinic.ts
-```
-
-عدّل القيم هناك وستنعكس على الموقع كاملاً. الحقول الفارغة (`""`) تُخفى تلقائياً من الصفحة.
-
-## التشغيل محلياً
-
-تحتاج إلى [Node.js](https://nodejs.org) (يُفضّل عبر [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
-
-```sh
-# تثبيت الاعتماديات
+```bash
 npm install
-
-# تشغيل خادم التطوير
 npm run dev
 ```
 
-ثم افتح العنوان الظاهر في الطرفية (افتراضياً `http://localhost:8080`).
-
-## البناء للإنتاج
-
-```sh
+## بناء نسخة الإنتاج
+```bash
 npm run build
 ```
 
-تُولَّد نسخة الإنتاج داخل مجلد `dist/`، والملفات الثابتة الجاهزة للنشر
-(بما فيها `index.html` المُولَّدة مسبقاً) موجودة في `dist/client/`.
-
 ## النشر على GitHub Pages
+المشروع مضبوط للنشر تلقائياً من خلال GitHub Actions عند كل تحديث على فرع `main`.
 
-المشروع مضبوط مسبقاً بمسار نسبي (`base: './'` في `vite.config.ts`) مع توليد
-الصفحة الرئيسية كـ HTML ثابت، لذا يعمل على GitHub Pages تحت أي اسم مستودع
-دون تعديل إضافي.
+1. افتح المستودع في GitHub.
+2. اذهب إلى Settings ثم Pages.
+3. اختر GitHub Actions ضمن Build and deployment.
+4. راقب سير العمل من تبويب Actions.
 
-### الطريقة الأولى: النشر اليدوي من مجلد البناء
+## تعديل بيانات العيادة
+تُعدّل بيانات الطبيبة والخدمات ورقم الهاتف وروابط التواصل في الملف:
 
-1. نفّذ `npm run build`.
-2. انشر محتويات مجلد `dist/client/` على فرع `gh-pages`، مثلاً باستخدام حزمة `gh-pages`:
+`src/config/clinic.ts`
 
-   ```sh
-   npx gh-pages -d dist/client
-   ```
+## المستودع
+https://github.com/ama98996t-crypto/dr-ethar-clinic
 
-3. من إعدادات المستودع: **Settings → Pages**، اختر الفرع `gh-pages` والمجلد `/ (root)`.
-4. بعد دقائق يصبح الموقع متاحاً على:
-   `https://<اسم-المستخدم>.github.io/<اسم-المستودع>/`
-
-### الطريقة الثانية: GitHub Actions (نشر تلقائي عند كل push)
-
-أنشئ الملف `.github/workflows/deploy.yml` بالمحتوى التالي:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm install
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist/client
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-ثم من **Settings → Pages** اختر **Source: GitHub Actions**، وادفع التغييرات إلى فرع `main`.
-
-## بنية المشروع
-
-```
-src/
-├── config/clinic.ts      # كل محتوى العيادة القابل للتعديل
-├── routes/
-│   ├── __root.tsx        # الغلاف العام (الخطوط، اللغة، الاتجاه RTL)
-│   └── index.tsx         # الصفحة الرئيسية
-├── styles.css            # الألوان والخطوط (Tailwind v4)
-└── ...
-```
+لا يعتمد الموقع على منصة إنشاء مواقع خارجية وقت التشغيل أو النشر؛ إدارة الكود والنشر تتم عبر GitHub.
