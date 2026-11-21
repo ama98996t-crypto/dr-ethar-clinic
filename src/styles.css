@@ -494,3 +494,166 @@ body { background: #fffdf9; }
   .visual-orbit { width:340px; height:340px; }
   .orbit-two { width:380px; height:380px; }
 }
+
+
+/* HERO REDESIGN — modern medical luxury, photo-led */
+.hero {
+  min-height: 760px;
+  background:
+    radial-gradient(circle at 77% 45%, rgba(88,126,174,.28), transparent 34%),
+    linear-gradient(112deg,#0a1730 0%,#12294d 52%,#1e416d 100%) !important;
+}
+.hero-grid {
+  min-height: 700px !important;
+  grid-template-columns: .92fr 1.08fr !important;
+  gap: clamp(35px,6vw,90px) !important;
+  padding-top: 64px !important;
+  padding-bottom: 88px !important;
+}
+.hero-copy { max-width: 620px; }
+.hero h1 {
+  font-size: clamp(54px,6.3vw,82px) !important;
+  line-height: 1.48 !important;
+  letter-spacing: -.055em;
+  text-shadow: 0 8px 34px rgba(0,0,0,.16);
+}
+.hero-description { max-width: 570px; font-size: 15px; line-height: 2.15; }
+.hero-actions { margin-top: 34px; }
+.btn-gold { box-shadow: 0 10px 28px rgba(197,163,106,.22); }
+.hero-visual {
+  min-height: 610px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.hero-photo-card {
+  width: min(100%,560px) !important;
+  min-height: 0 !important;
+  padding: 22px !important;
+  margin: 0 !important;
+  background: linear-gradient(145deg,#fffefa,#e7dfd0) !important;
+  border: 1px solid #e4c98e !important;
+  border-radius: 4px !important;
+  box-shadow: 0 38px 100px rgba(0,0,0,.42), 0 0 0 10px rgba(234,216,181,.08) !important;
+  transform: perspective(1400px) rotateY(-2deg) !important;
+}
+.hero-photo-card:before {
+  inset: 10px !important;
+  border: 1px solid rgba(185,145,77,.65) !important;
+}
+.hero-photo-card .portrait-top {
+  padding: 2px 5px 14px;
+  color: #876b3e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.hero-photo-card .portrait-photo-wrap {
+  height: clamp(330px,37vw,470px) !important;
+  margin: 0 !important;
+  border: 5px solid #fff !important;
+  outline: 1px solid rgba(197,163,106,.9);
+  overflow: hidden;
+  background: #dce5e4;
+  box-shadow: 0 20px 45px rgba(14,31,57,.2);
+}
+.hero-photo-card .portrait-photo {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center 34% !important;
+  filter: saturate(.94) contrast(1.02);
+}
+.hero-photo-card .portrait-photo-caption {
+  padding: 25px 12px 13px;
+  font-size: 12px;
+  letter-spacing: .02em;
+}
+.hero-photo-card .portrait-caption {
+  padding: 17px 8px 4px;
+  gap: 3px;
+}
+.hero-photo-card .portrait-caption span { color: #947747; font-size: 11px; }
+.hero-photo-card .portrait-caption strong {
+  color: #12294d !important;
+  font-size: 25px !important;
+  line-height: 1.65;
+}
+.hero-photo-card .portrait-caption small { color: #687486 !important; font-size: 11px !important; }
+.hero-photo-card .portrait-seal {
+  margin-top: 12px;
+  padding: 5px 16px;
+  border-color: rgba(197,163,106,.7);
+  color: #8d6c3c;
+}
+.hero-visual .visual-orbit { width: 540px; height: 540px; border-color: rgba(234,216,181,.19); }
+.hero-visual .orbit-two { width: 610px; height: 610px; }
+.floating-note {
+  left: -6%;
+  bottom: 42px;
+  padding: 15px 20px;
+  border: 1px solid rgba(197,163,106,.58);
+  box-shadow: 0 18px 45px rgba(0,0,0,.26);
+}
+.credentials { background: #fffefa; box-shadow: 0 12px 32px rgba(17,37,67,.045); }
+.credential { padding-block: 5px; }
+.about-section { background: #fffefa; }
+.services-section { background: linear-gradient(140deg,#f5f6f8,#e9eef4); }
+.service-card {
+  border-radius: 3px;
+  border: 1px solid rgba(197,163,106,.35);
+  box-shadow: 0 16px 38px rgba(16,37,69,.075);
+}
+.contact-panel {
+  background: linear-gradient(145deg,#fffefa,#f0f2f6);
+  border-color: rgba(197,163,106,.38);
+  box-shadow: 0 20px 50px rgba(16,37,69,.07);
+}
+@media (max-width: 850px) {
+  .hero { min-height: 0; }
+  .hero-grid {
+    min-height: 0 !important;
+    grid-template-columns: .95fr 1.05fr !important;
+    gap: 22px !important;
+    padding-block: 55px 82px !important;
+  }
+  .hero h1 { font-size: clamp(43px,6vw,58px) !important; }
+  .hero-visual { min-height: 490px !important; }
+  .hero-photo-card { width: min(100%,420px) !important; padding: 17px !important; }
+  .hero-photo-card .portrait-photo-wrap { height: 320px !important; }
+  .hero-photo-card .portrait-caption strong { font-size: 20px !important; }
+  .hero-visual .visual-orbit { width: 390px; height: 390px; }
+  .hero-visual .orbit-two { width: 440px; height: 440px; }
+}
+@media (max-width: 600px) {
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 27px !important;
+    padding: 44px 0 83px !important;
+  }
+  .hero-copy { order: 1; }
+  .hero-copy { text-align: center; }
+  .hero h1 { font-size: clamp(39px,10.4vw,52px) !important; margin-top: 17px; }
+  .hero-description { margin-inline: auto; font-size: 12px; }
+  .hero-actions { justify-content: center; }
+  .hero-trust { justify-content: center; }
+  .hero-visual {
+    order: 2;
+    min-height: 0 !important;
+    padding: 0 0 27px;
+    margin-top: 0;
+  }
+  .hero-photo-card {
+    width: min(100%,390px) !important;
+    padding: 17px !important;
+    transform: none !important;
+  }
+  .hero-photo-card .portrait-photo-wrap { height: 330px !important; }
+  .hero-photo-card .portrait-caption strong { font-size: 21px !important; }
+  .hero-visual .visual-orbit { width: 340px; height: 340px; }
+  .hero-visual .orbit-two { width: 380px; height: 380px; }
+  .floating-note { left: -4px; bottom: 3px; }
+}
