@@ -89,6 +89,22 @@ function Index() {
           </div>
         </section>
 
+        <section className="section procedure-photo-section" aria-label="صورة من أجواء العمليات">
+          <div className="shell procedure-photo-grid">
+            <div className="procedure-photo-frame">
+              <img src="/dr-ethar-clinic/clinic-surgery.jpg" alt="طبيبة من الفريق الطبي أثناء إجراء عملية جراحية" loading="lazy" />
+              <span className="photo-corner photo-corner-one" />
+              <span className="photo-corner photo-corner-two" />
+            </div>
+            <div className="procedure-photo-copy">
+              <span className="section-kicker">رعاية طبية متخصصة</span>
+              <h2>اهتمام بالتفاصيل<br /><em>في كل مرحلة</em></h2>
+              <div className="gold-rule" />
+              <p>الرعاية النسائية والتوليدية تبدأ بالاهتمام والمتابعة، وتستمر بالحرص على سلامة المريضة وراحتها.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="section services-section" id="services">
           <div className="shell">
             <div className="center-heading"><span className="section-kicker">خدمات العيادة</span><h2>رعاية شاملة لصحة المرأة</h2><p>مجموعة من الخدمات الطبية التخصصية لمتابعة صحتك باهتمام.</p></div>
