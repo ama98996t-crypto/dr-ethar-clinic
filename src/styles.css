@@ -9,10 +9,10 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --ink: #172e35;
-  --ink-soft: #29454b;
-  --gold: #b89459;
-  --gold-light: #d9c39b;
+  --ink: #101d3a;
+  --ink-soft: #1d3159;
+  --gold: #c6a15d;
+  --gold-light: #ead7aa;
   --paper: #fbfaf7;
   --muted: #738080;
   --line: #e8e3d9;
@@ -48,7 +48,7 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
 .header-cta { display: inline-flex; align-items: center; gap: 10px; padding: 11px 19px; border: 1px solid var(--gold); color: var(--ink); font-size: 12px; transition: .25s; }
 .header-cta:hover { background: var(--ink); color: white; border-color: var(--ink); }
 
-.hero { position: relative; overflow: hidden; color: white; background: radial-gradient(ellipse at 78% 40%, rgba(60,91,92,.38), transparent 38%), linear-gradient(115deg,#112a31 0%,#1b3b40 58%,#23464a 100%); }
+.hero { position: relative; overflow: hidden; color: white; background: radial-gradient(ellipse at 78% 40%, rgba(60,91,92,.38), transparent 38%), linear-gradient(115deg,#0b1530 0%,#14264b 58%,#203b68 100%); }
 .hero:after { content: ""; position: absolute; width: 560px; height: 560px; border: 1px solid rgba(218,194,151,.13); border-radius: 50%; right: -270px; top: -260px; box-shadow: 0 0 0 45px rgba(218,194,151,.025),0 0 0 90px rgba(218,194,151,.02); pointer-events: none; }
 .hero-pattern { position: absolute; inset: 0; opacity: .13; background-image: linear-gradient(30deg,transparent 49.7%,rgba(255,255,255,.12) 50%,transparent 50.3%),linear-gradient(120deg,transparent 49.7%,rgba(255,255,255,.1) 50%,transparent 50.3%); background-size: 78px 78px; mask-image: linear-gradient(90deg,transparent,black); }
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 50px; min-height: 610px; padding-block: 72px 82px; }
@@ -359,4 +359,67 @@ body { background: #fffdf9; }
   .procedure-photo-frame { order: 2; }
   .procedure-photo-copy { order: 1; }
   .procedure-photo-copy h2 { font-size: 34px; }
+}
+
+
+/* Royal navy + champagne gold premium photo treatment */
+.portrait-card {
+  width: min(390px, 88%);
+  min-height: 500px;
+  padding: 22px;
+  color: #101d3a;
+  background: linear-gradient(145deg,#fffdf8 0%,#e8dfcf 100%);
+  border: 1px solid rgba(234,215,170,.9);
+  border-radius: 3px;
+  box-shadow: 0 28px 70px rgba(0,0,0,.34), 0 0 0 8px rgba(234,215,170,.08);
+  transform: perspective(1100px) rotateY(-4deg) rotateX(2deg);
+}
+.portrait-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  margin: 24px auto 18px;
+  overflow: hidden;
+  border: 5px solid #fffdf8;
+  outline: 1px solid rgba(184,148,89,.65);
+  box-shadow: 0 18px 36px rgba(12,25,52,.24);
+  background: #d9e0df;
+}
+.portrait-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.portrait-photo-caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 12px 10px 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  background: linear-gradient(transparent,rgba(8,19,43,.88));
+}
+.portrait-card:before { border-color: rgba(198,161,93,.58); }
+.procedure-photo-frame {
+  border: 1px solid rgba(198,161,93,.75);
+  box-shadow: 18px 22px 48px rgba(16,29,58,.18);
+  background: #101d3a;
+}
+.procedure-photo-frame img {
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:360px;
+  object-fit:cover;
+}
+.service-card { box-shadow: 0 14px 35px rgba(16,29,58,.07); border:1px solid rgba(198,161,93,.22); }
+.service-card:hover { transform: translateY(-8px); box-shadow:0 24px 48px rgba(16,29,58,.14); }
+@media (max-width: 700px) {
+  .portrait-card { min-height: 0; width: min(340px,88%); transform:none; }
+  .portrait-photo-wrap { height: 280px; }
 }
