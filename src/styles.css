@@ -337,3 +337,26 @@ body { background: #fffdf9; }
   .contact-panel { padding: 13px 18px; }
   .contact-row { padding-block: 20px; }
 }
+
+
+/* Featured clinical photography */
+.procedure-photo-section { position: relative; overflow: hidden; background: linear-gradient(125deg,#10272d 0%,#183b40 58%,#24494b 100%); }
+.procedure-photo-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(42px,8vw,110px); }
+.procedure-photo-frame { position: relative; padding: 13px; border: 1px solid rgba(234,217,181,.48); background: rgba(255,255,255,.06); box-shadow: 0 28px 70px rgba(0,0,0,.28); }
+.procedure-photo-frame:before { content: ""; position: absolute; inset: 22px; border: 1px solid rgba(234,217,181,.4); pointer-events: none; z-index: 1; }
+.procedure-photo-frame img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center; }
+.photo-corner { position: absolute; width: 42px; height: 42px; border-color: var(--gold-light); border-style: solid; z-index: 2; }
+.photo-corner-one { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.photo-corner-two { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+.procedure-photo-copy { color: #fffdf9; }
+.procedure-photo-copy .section-kicker { color: var(--gold-light); }
+.procedure-photo-copy h2 { margin-block: 20px; font-size: clamp(34px,4.4vw,52px); line-height: 1.7; }
+.procedure-photo-copy h2 em { color: var(--gold-light); font-style: normal; }
+.procedure-photo-copy .gold-rule { margin-bottom: 26px; }
+.procedure-photo-copy p { max-width: 470px; color: rgba(255,253,249,.76); font-size: 15px; line-height: 2.2; }
+@media (max-width: 700px) {
+  .procedure-photo-grid { grid-template-columns: 1fr; gap: 34px; }
+  .procedure-photo-frame { order: 2; }
+  .procedure-photo-copy { order: 1; }
+  .procedure-photo-copy h2 { font-size: 34px; }
+}
