@@ -63,7 +63,7 @@ function Index() {
               <div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" />
               <div className="portrait-card">
                 <div className="portrait-top"><span>CLINIC PROFILE</span><Sparkles size={17} /></div>
-                <div className="portrait-emblem"><div className="emblem-ring"><Venus size={68} strokeWidth={1.15} /></div><span className="emblem-cross">✦</span></div>
+                <div className="portrait-photo-wrap"><img className="portrait-photo" src="./clinic-surgery.jpg" alt="صورة الطبيبة أثناء العمل في غرفة العمليات" loading="eager" /><span className="portrait-photo-caption">رعاية طبية متخصصة</span></div>
                 <div className="portrait-caption"><span>الدكتورة</span><strong>إيثار خضر الخفاجي</strong><small>جراحة أمراض النسائية والتوليد والعقم</small></div>
                 <div className="portrait-seal"><Award size={18} /><span>بورد عربي</span></div>
               </div>
