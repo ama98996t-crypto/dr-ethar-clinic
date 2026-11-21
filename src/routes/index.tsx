@@ -92,7 +92,7 @@ function Index() {
         <section className="section procedure-photo-section" aria-label="صورة من أجواء العمليات">
           <div className="shell procedure-photo-grid">
             <div className="procedure-photo-frame">
-              <img src="/dr-ethar-clinic/clinic-surgery.jpg" alt="طبيبة من الفريق الطبي أثناء إجراء عملية جراحية" loading="lazy" />
+              <img src="./clinic-surgery.jpg" alt="طبيبة من الفريق الطبي أثناء إجراء عملية جراحية" loading="lazy" />
               <span className="photo-corner photo-corner-one" />
               <span className="photo-corner photo-corner-two" />
             </div>
