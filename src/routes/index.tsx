@@ -1,122 +1,77 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpLeft, Award, CalendarCheck, ChevronLeft, Clock3, HeartPulse, MapPin, Menu, Phone, ShieldCheck, Sparkles, Stethoscope, Syringe, Venus } from "lucide-react";
+import { ArrowUpLeft, ArrowLeft, Award, HeartPulse, MapPin, Phone, ShieldCheck, Stethoscope, Venus, Baby, Activity, Instagram, Facebook } from "lucide-react";
 import { clinic, mapsUrl, services, whatsappUrl } from "@/config/clinic";
 
 const title = "عيادة الدكتورة إيثار خضر الخفاجي | النسائية والتوليد والعقم";
 const description = "عيادة الدكتورة إيثار خضر الخفاجي، بورد عربي في جراحة أمراض النسائية والتوليد والعقم.";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { property: "og:locale", content: "ar_IQ" },
-    ],
-  }),
+  head: () => ({ meta: [
+    { title }, { name: "description", content: description },
+    { property: "og:title", content: title }, { property: "og:description", content: description },
+    { property: "og:type", content: "website" }, { property: "og:locale", content: "ar_IQ" },
+  ]}),
   component: Index,
 });
 
-const nav = [
-  ["#about", "عن الطبيبة"],
-  ["#services", "الخدمات"],
-  ["#contact", "التواصل"],
-] as const;
-
-const icons = [HeartPulse, Venus, Stethoscope, Syringe, ShieldCheck];
+const nav = [["#about","عن الطبيبة"],["#services","الخدمات الطبية"],["#contact","التواصل"]] as const;
+const icons = [HeartPulse, Venus, Stethoscope, Baby, Activity];
 
 function Index() {
-  return (
-    <div className="clinic-site">
-      <div className="topline"><div className="shell topline-inner"><span><MapPin size={14} /> النجف الأشرف · الحيدرية</span><span className="topline-note">رعاية واهتمام بصحة المرأة</span></div></div>
-      <header className="site-header">
-        <div className="shell header-inner">
-          <a href="#home" className="brand" aria-label="الصفحة الرئيسية">
-            <span className="brand-mark"><span>إ</span><i /></span>
-            <span className="brand-copy"><strong>د. إيثار الخفاجي</strong><small>النسائية والتوليد والعقم</small></span>
-          </a>
-          <nav className="desktop-nav" aria-label="القائمة الرئيسية">
-            {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
-          </nav>
-          <a className="header-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">تواصلي معنا <ArrowUpLeft size={16} /></a>
+  return <div className="fresh-site" dir="rtl">
+    <div className="fresh-top"><div className="fresh-wrap fresh-top-inner"><span><MapPin size={14}/> النجف الأشرف · الحيدرية</span><span>عيادة متخصصة بصحة المرأة</span></div></div>
+    <header className="fresh-header"><div className="fresh-wrap fresh-header-inner">
+      <a href="#home" className="fresh-brand"><span className="fresh-brand-icon">إ</span><span><b>د. إيثار خضر الخفاجي</b><small>النسائية والتوليد والعقم</small></span></a>
+      <nav className="fresh-nav">{nav.map(([href,label])=><a key={href} href={href}>{label}</a>)}</nav>
+      <a className="fresh-header-btn" href={whatsappUrl} target="_blank" rel="noopener noreferrer">تواصلي معنا <ArrowUpLeft size={16}/></a>
+    </div></header>
+
+    <main>
+      <section className="fresh-hero" id="home">
+        <div className="fresh-wrap fresh-hero-grid">
+          <div className="fresh-hero-copy">
+            <span className="fresh-kicker"><i/> رعاية نسائية متخصصة</span>
+            <h1>لأن صحتكِ<br/><em>تستحق الأفضل.</em></h1>
+            <p className="fresh-doctor">{clinic.name}</p>
+            <p className="fresh-intro">{clinic.qualifications}. رعاية ومتابعة طبية للمرأة في مراحل الحمل والولادة، وعلاج الأمراض النسائية والعقم.</p>
+            <div className="fresh-actions">
+              <a className="fresh-btn fresh-btn-primary" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Phone size={17}/> تواصلي عبر واتساب</a>
+              <a className="fresh-btn fresh-btn-quiet" href="#services">تعرّفي على الخدمات <ArrowLeft size={16}/></a>
+            </div>
+            <div className="fresh-credentials"><span><Award size={18}/><b>بورد عربي</b></span><span><ShieldCheck size={18}/><b>تدريب تخصصي</b></span></div>
+          </div>
+          <div className="fresh-hero-image">
+            <div className="fresh-image-frame">
+              <img src="/dr-ethar-clinic/clinic-surgery.jpg?v=9" alt="صورة من غرفة العمليات" fetchPriority="high" decoding="async"/>
+              <div className="fresh-image-label"><span>اختصاص النسائية والتوليد والعقم</span><b>د. إيثار خضر الخفاجي</b></div>
+            </div>
+            <span className="fresh-image-stamp"><HeartPulse size={19}/> صحة المرأة أولويتنا</span>
+            <span className="fresh-image-index">01 / 03</span>
+          </div>
         </div>
-      </header>
+        <div className="fresh-hero-bottom"><div className="fresh-wrap">اهتمام بالتفاصيل <i/> خصوصية واحترام <i/> رعاية متخصصة</div></div>
+      </section>
 
-      <main>
-        <section className="hero" id="home">
-          <div className="hero-pattern" />
-          <div className="shell hero-grid">
-            <div className="hero-copy">
-              <div className="eyebrow"><span className="eyebrow-line" /> عيادة متخصصة بصحة المرأة</div>
-              <h1>رعاية طبية<br /><em>تستحقينها</em> بكل ثقة</h1>
-              <p className="hero-lead">{clinic.name}</p>
-              <p className="hero-description">{clinic.qualifications}. متابعة واهتمام في مختلف مراحل صحة المرأة، من الحمل والولادة إلى علاج الأمراض النسائية والعقم.</p>
-              <div className="hero-actions">
-                <a className="btn btn-gold" href={whatsappUrl} target="_blank" rel="noopener noreferrer">للاستفسار عبر واتساب <ArrowLeft size={17} /></a>
-                <a className="btn btn-outline" href="#services">اكتشفي الخدمات <ChevronLeft size={17} /></a>
-              </div>
-              <div className="hero-trust"><span><ShieldCheck size={17} /> اختصاص دقيق</span><span><Award size={17} /> بورد عربي</span><span><HeartPulse size={17} /> اهتمام بصحتك</span></div>
-            </div>
-            <div className="hero-visual">
-              <div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" />
-              <figure className="portrait-card hero-photo-card">
-                <div className="portrait-top"><span>رعاية متخصصة بصحة المرأة</span><Sparkles size={17} /></div>
-                <div className="portrait-photo-wrap"><img className="portrait-photo" src="/dr-ethar-clinic/clinic-surgery.jpg?v=6" alt="صورة من غرفة العمليات" fetchPriority="high" decoding="async" /><span className="portrait-photo-caption">عناية طبية باهتمام وثقة</span></div>
-                <figcaption className="portrait-caption"><span>اختصاص النسائية والتوليد والعقم</span><strong>د. إيثار خضر الخفاجي</strong><small>بورد عربي في جراحة أمراض النسائية والتوليد والعقم</small></figcaption>
-                <div className="portrait-seal"><Award size={18} /><span>بورد عربي</span></div>
-              </figure>
-              <div className="floating-note"><span className="note-icon"><HeartPulse size={19} /></span><span><b>صحة المرأة أولويتنا</b><small>رعاية ومتابعة باهتمام</small></span></div>
-              <div className="visual-dot dot-a" /><div className="visual-dot dot-b" />
-            </div>
-          </div>
-          <div className="hero-bottom"><div className="shell hero-bottom-inner"><span>عناية متخصصة · خصوصية · اهتمام</span><span className="scroll-hint">اكتشفي المزيد <span>↓</span></span></div></div>
-        </section>
+      <section className="fresh-about" id="about"><div className="fresh-wrap fresh-about-grid">
+        <div><span className="fresh-overline">عن الطبيبة</span><h2>رعاية مبنية على<br/><em>العلم والاهتمام</em></h2></div>
+        <div className="fresh-about-copy"><p className="fresh-about-name">{clinic.doctorName}</p><p>{clinic.qualifications}.</p><p>{clinic.certificate}، مع اهتمام بتقديم الرعاية والمتابعة الطبية للمرأة واحترام خصوصيتها واحتياجاتها.</p></div>
+      </div></section>
 
-        <section className="credentials">
-          <div className="shell credentials-grid">
-            <div className="credential"><span className="credential-icon"><Award size={22} /></span><span><b>بورد عربي</b><small>في جراحة أمراض النسائية والتوليد والعقم</small></span></div>
-            <div className="credential"><span className="credential-icon"><ShieldCheck size={22} /></span><span><b>تدريب نسائي لاجراحي</b><small>شهادة تدريب تخصصية</small></span></div>
-            <div className="credential"><span className="credential-icon"><HeartPulse size={22} /></span><span><b>رعاية متخصصة</b><small>اهتمام بصحة المرأة ومراحل حياتها</small></span></div>
-          </div>
-        </section>
+      <section className="fresh-services" id="services"><div className="fresh-wrap">
+        <div className="fresh-section-head"><div><span className="fresh-overline">خدمات العيادة</span><h2>اهتمام بصحتكِ<br/><em>في كل مرحلة</em></h2></div><p>خدمات طبية تخصصية لمتابعة صحة المرأة وتقديم الرعاية المناسبة.</p></div>
+        <div className="fresh-service-list">{services.map((service,index)=>{const Icon=icons[index%icons.length];return <article className="fresh-service" key={service.title}><span className="fresh-service-no">0{index+1}</span><span className="fresh-service-icon"><Icon size={23} strokeWidth={1.6}/></span><div><h3>{service.title}</h3><p>{service.text}</p></div><a href="#contact" aria-label={`استفسري عن ${service.title}`}><ArrowUpLeft size={19}/></a></article>})}</div>
+      </div></section>
 
-        <section className="section about-section" id="about">
-          <div className="shell about-grid">
-            <div className="section-heading"><span className="section-kicker">نبذة عن الطبيبة</span><h2>خبرة تخصصية،<br /><em>واهتمام يطمئنك</em></h2><div className="gold-rule" /></div>
-            <div className="about-text"><p className="about-name">{clinic.doctorName}</p><p>{clinic.qualifications}.</p><p>{clinic.certificate}، مع اهتمام بتقديم الرعاية والمتابعة الطبية للمرأة في أجواء تحترم الخصوصية وتضع احتياجات المراجِعة في المقدمة.</p><a href="#contact" className="text-link">تواصلي مع العيادة <ArrowLeft size={16} /></a></div>
-          </div>
-        </section>
-
-        <section className="section services-section" id="services">
-          <div className="shell">
-            <div className="center-heading"><span className="section-kicker">خدمات العيادة</span><h2>رعاية شاملة لصحة المرأة</h2><p>مجموعة من الخدمات الطبية التخصصية لمتابعة صحتك باهتمام.</p></div>
-            <div className="services-grid">
-              {services.map((service, index) => {
-                const Icon = icons[index % icons.length];
-                return <article className="service-card" key={service.title}><div className="service-card-top"><span className="service-icon"><Icon size={24} strokeWidth={1.6} /></span><span className="service-number">0{index + 1}</span></div><h3>{service.title}</h3><p>{service.text}</p><a href="#contact" aria-label={`استفسري عن ${service.title}`}><ArrowUpLeft size={17} /></a></article>;
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section className="quote-band"><div className="shell quote-inner"><span className="quote-mark">“</span><p>صحتكِ وراحتكِ تستحقان عناية واهتماماً في كل مرحلة.</p><span className="quote-line" /></div></section>
-
-        <section className="section contact-section" id="contact">
-          <div className="shell contact-grid">
-            <div className="contact-intro"><span className="section-kicker">نحن هنا لمساعدتك</span><h2>ابدئي بالتواصل<br /><em>مع العيادة</em></h2><p>للاستفسار عن الخدمات أو التواصل مع العيادة، استخدمي الهاتف أو واتساب.</p><a className="btn btn-gold" href={whatsappUrl} target="_blank" rel="noopener noreferrer">تواصلي عبر واتساب <ArrowLeft size={17} /></a></div>
-            <div className="contact-panel">
-              <div className="contact-row"><span className="contact-icon"><Phone size={20} /></span><div><small>رقم الهاتف</small><a href={`tel:${clinic.phoneLink}`} dir="ltr">{clinic.phoneDisplay}</a></div><a className="row-arrow" href={`tel:${clinic.phoneLink}`} aria-label="اتصال"><ArrowUpLeft size={18} /></a></div>
-              <div className="contact-row"><span className="contact-icon"><MapPin size={20} /></span><div><small>عنوان العيادة</small><b>{clinic.address}</b></div><a className="row-arrow" href={mapsUrl} target="_blank" rel="noopener noreferrer" aria-label="الموقع على الخريطة"><ArrowUpLeft size={18} /></a></div>
-              <div className="social-links"><a href={clinic.social.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href={clinic.social.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="site-footer"><div className="shell footer-inner"><a href="#home" className="footer-brand">د. إيثار الخفاجي</a><span>© {new Date().getFullYear()} جميع الحقوق محفوظة</span><a href="#home">العودة للأعلى ↑</a></div></footer>
-      <a className="mobile-whatsapp" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Phone size={18} /> تواصلي مع العيادة</a>
-    </div>
-  );
+      <section className="fresh-contact" id="contact"><div className="fresh-wrap fresh-contact-grid">
+        <div className="fresh-contact-copy"><span className="fresh-overline">التواصل والاستفسار</span><h2>نحن هنا<br/><em>للاستماع إليكِ.</em></h2><p>للاستفسار عن خدمات العيادة أو الوصول إليها، يمكنكِ التواصل عبر الهاتف أو واتساب.</p><a className="fresh-btn fresh-btn-light" href={whatsappUrl} target="_blank" rel="noopener noreferrer">ابدئي المحادثة <ArrowUpLeft size={17}/></a></div>
+        <div className="fresh-contact-card">
+          <a className="fresh-contact-row" href={`tel:${clinic.phoneLink}`}><span><Phone size={20}/></span><div><small>اتصال مباشر</small><b dir="ltr">{clinic.phoneDisplay}</b></div><ArrowUpLeft size={18}/></a>
+          <a className="fresh-contact-row" href={mapsUrl} target="_blank" rel="noopener noreferrer"><span><MapPin size={20}/></span><div><small>عنوان العيادة</small><b>{clinic.address}</b></div><ArrowUpLeft size={18}/></a>
+          <div className="fresh-socials"><a href={clinic.social.facebook} target="_blank" rel="noopener noreferrer"><Facebook size={17}/> Facebook</a><a href={clinic.social.instagram} target="_blank" rel="noopener noreferrer"><Instagram size={17}/> Instagram</a></div>
+        </div>
+      </div></section>
+    </main>
+    <footer className="fresh-footer"><div className="fresh-wrap"><b>د. إيثار خضر الخفاجي</b><span>© {new Date().getFullYear()} جميع الحقوق محفوظة</span><a href="#home">العودة للأعلى ↑</a></div></footer>
+    <a className="fresh-mobile-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Phone size={18}/> تواصلي مع العيادة</a>
+  </div>;
 }
