@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpLeft, ArrowLeft, Award, HeartPulse, MapPin, Phone, ShieldCheck, Stethoscope, Venus, Baby, Activity, Instagram, Facebook } from "lucide-react";
+import { ArrowUpLeft, ArrowLeft, Award, HeartPulse, MapPin, Phone, ShieldCheck, Stethoscope, Venus, Baby, Activity, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { clinic, mapsUrl, services, whatsappUrl } from "@/config/clinic";
 
 const title = "عيادة الدكتورة إيثار خضر الخفاجي | النسائية والتوليد والعقم";
