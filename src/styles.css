@@ -160,3 +160,32 @@ a:focus-visible{outline:3px solid #bd765e;outline-offset:4px}
  .fresh-service{grid-template-columns:24px 36px 1fr 27px;gap:7px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fresh-btn,.fresh-nav a,.fresh-service,.fresh-service>a{transition:none}}
+
+/* Prominent quick contact & social shortcuts */
+.quick-links{position:relative;z-index:2;background:#fffdfa;border-bottom:1px solid #e5ded4;box-shadow:0 8px 24px rgba(49,43,35,.045)}
+.quick-links-inner{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding-block:17px}
+.quick-link{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:7px 10px;border-left:1px solid #eee8df;text-align:center;transition:background .2s,transform .2s}
+.quick-link:last-child{border-left:0}
+.quick-link:hover{background:#f8f2eb;transform:translateY(-2px)}
+.quick-icon{width:45px;height:45px;display:grid;place-items:center;border-radius:14px;margin-bottom:3px;transition:transform .2s}
+.quick-link:hover .quick-icon{transform:scale(1.06)}
+.quick-phone{background:#f1e9df;color:#8e5a45}
+.quick-whatsapp{background:#e5f2e8;color:#26834b}
+.quick-instagram{background:#f5e8ed;color:#b34f76}
+.quick-facebook{background:#e8eef9;color:#4267a9}
+.quick-location{background:#f2ece1;color:#a16b43}
+.quick-link b{font-size:11px;color:#343a34}
+.quick-link small{font-size:9px;color:#88877f;white-space:nowrap}
+@media(max-width:620px){
+ .quick-links-inner{width:100%;grid-template-columns:repeat(5,minmax(0,1fr));padding:11px 7px}
+ .quick-link{gap:3px;padding:5px 2px;border-left:1px solid #eee8df}
+ .quick-icon{width:39px;height:39px;border-radius:12px}
+ .quick-icon svg{width:19px;height:19px}
+ .quick-link b{font-size:9px}
+ .quick-link small{font-size:7px;white-space:normal;line-height:1.45}
+}
+@media(max-width:360px){
+ .quick-icon{width:34px;height:34px;border-radius:10px}
+ .quick-link b{font-size:8px}
+ .quick-link small{font-size:6.5px}
+}
