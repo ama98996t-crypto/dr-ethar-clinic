@@ -26,6 +26,16 @@ function Index() {
       <a className="fresh-header-btn" href={whatsappUrl} target="_blank" rel="noopener noreferrer">تواصلي معنا <ArrowUpLeft size={16}/></a>
     </div></header>
 
+    <section className="quick-links" aria-label="روابط التواصل السريعة">
+      <div className="fresh-wrap quick-links-inner">
+        <a className="quick-link" href={`tel:${clinic.phoneLink}`}><span className="quick-icon quick-phone"><Phone size={21}/></span><b>اتصال مباشر</b><small dir="ltr">{clinic.phoneDisplay}</small></a>
+        <a className="quick-link" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><span className="quick-icon quick-whatsapp"><MessageCircle size={22}/></span><b>واتساب</b><small>راسلينا مباشرة</small></a>
+        <a className="quick-link" href={clinic.social.instagram} target="_blank" rel="noopener noreferrer"><span className="quick-icon quick-instagram"><Instagram size={22}/></span><b>إنستغرام</b><small>تابعي حسابنا</small></a>
+        <a className="quick-link" href={clinic.social.facebook} target="_blank" rel="noopener noreferrer"><span className="quick-icon quick-facebook"><Facebook size={22}/></span><b>فيسبوك</b><small>صفحة العيادة</small></a>
+        <a className="quick-link" href={mapsUrl} target="_blank" rel="noopener noreferrer"><span className="quick-icon quick-location"><MapPin size={22}/></span><b>موقع العيادة</b><small>افتحي الخريطة</small></a>
+      </div>
+    </section>
+
     <main>
       <section className="fresh-hero" id="home">
         <div className="fresh-wrap fresh-hero-grid">
