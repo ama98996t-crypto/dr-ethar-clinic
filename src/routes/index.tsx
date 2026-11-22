@@ -32,7 +32,7 @@ function Index() {
         <a className="quick-link" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><span className="quick-icon quick-whatsapp"><MessageCircle size={22}/></span><b>واتساب</b><small>راسلينا مباشرة</small></a>
         <a className="quick-link" href={clinic.social.instagram} target="_blank" rel="noopener noreferrer"><span className="quick-icon quick-instagram"><Instagram size={22}/></span><b>إنستغرام</b><small>تابعي حسابنا</small></a>
         <a className="quick-link" href={clinic.social.facebook} target="_blank" rel="noopener noreferrer"><span className="quick-icon quick-facebook"><Facebook size={22}/></span><b>فيسبوك</b><small>صفحة العيادة</small></a>
-        <a className="quick-link" href={mapsUrl} target="_blank" rel="noopener noreferrer"><span className="quick-icon quick-location"><MapPin size={22}/></span><b>موقع العيادة</b><small>افتحي الخريطة</small></a>
+        <div className="quick-link"><span className="quick-icon quick-location"><MapPin size={22}/></span><b>العنوان</b><small>{clinic.address}</small></div>
       </div>
     </section>
 
@@ -76,7 +76,7 @@ function Index() {
         <div className="fresh-contact-copy"><span className="fresh-overline">التواصل والاستفسار</span><h2>نحن هنا<br/><em>للاستماع إليكِ.</em></h2><p>للاستفسار عن خدمات العيادة أو الوصول إليها، يمكنكِ التواصل عبر الهاتف أو واتساب.</p><a className="fresh-btn fresh-btn-light" href={whatsappUrl} target="_blank" rel="noopener noreferrer">ابدئي المحادثة <ArrowUpLeft size={17}/></a></div>
         <div className="fresh-contact-card">
           <a className="fresh-contact-row" href={`tel:${clinic.phoneLink}`}><span><Phone size={20}/></span><div><small>اتصال مباشر</small><b dir="ltr">{clinic.phoneDisplay}</b></div><ArrowUpLeft size={18}/></a>
-          <a className="fresh-contact-row" href={mapsUrl} target="_blank" rel="noopener noreferrer"><span><MapPin size={20}/></span><div><small>عنوان العيادة</small><b>{clinic.address}</b></div><ArrowUpLeft size={18}/></a>
+          <div className="fresh-contact-row"><span><MapPin size={20}/></span><div><small>عنوان العيادة</small><b>{clinic.address}</b></div></div>
           <div className="fresh-socials"><a href={clinic.social.facebook} target="_blank" rel="noopener noreferrer"><Facebook size={17}/> Facebook</a><a href={clinic.social.instagram} target="_blank" rel="noopener noreferrer"><Instagram size={17}/> Instagram</a></div>
         </div>
       </div></section>
